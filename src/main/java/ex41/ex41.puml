@@ -1,22 +1,15 @@
 @startuml
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class List {
-
-String list
+class exercise_41
 
 
+class exercise_41 {
+
+String namesList()
+counter()
+sorter()
+createFile()
+readFile()
 
 }
 

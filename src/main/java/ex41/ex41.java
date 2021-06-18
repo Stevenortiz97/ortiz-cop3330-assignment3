@@ -35,9 +35,9 @@ public class ex41 {
 
 
         List sorted = readFile();
-        System.out.println("Total of " + i + " names");
-        System.out.println("-----------------");
-        System.out.println("" + sorted + "");
+
+        createFile(sorted);
+
 
 
     }
@@ -48,6 +48,7 @@ public class ex41 {
         Scanner s = new Scanner(new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_input.txt"));
         ArrayList<String> list = new ArrayList<String>();
 
+
         while (s.hasNextLine()) {
             list.add(s.nextLine());
             i ++;
@@ -55,16 +56,26 @@ public class ex41 {
         }
         s.close();
 
-        List<String> sorted = Arrays.asList(
-                list.stream().sorted(
-                        (s1, s2) -> s1.compareToIgnoreCase(s2)
-                ).toArray(String[]::new)
+        return Arrays.asList(
+                list.stream().sorted(String::compareToIgnoreCase).toArray(String[]::new)
         );
-
-        return sorted;
 
     }
 
+    private static void createFile(List<String> list) throws FileNotFoundException {
+
+        PrintWriter write = new PrintWriter("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_output.txt");
+
+        write.println("Total of "+ i +" names");
+        write.println("-----------------");
+
+        for(Object o : list)
+            write.println(o);
+
+        write.close();
+    }
 }
+
+
 
 
