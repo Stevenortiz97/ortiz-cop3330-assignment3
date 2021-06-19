@@ -1,5 +1,5 @@
 /*
- *  UCF COP3330 Summer 2021 Assignment 3 Exercise 41
+ *  UCF COP3330 Summer 2021 Assignment 3 Exercise 42
  *  Copyright 2021 Steven Ortiz
  */
 //Last      First     Salary
@@ -43,7 +43,6 @@ public class ex42 {
             //String last = tokens[tokens.length - 1];
             System.out.println(list);
         }
-
 
     }
 }
