@@ -14,27 +14,37 @@ class ex41Test {
     @Test
     void main() throws FileNotFoundException {
 
-        File namesReadTest = new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_input.txt");
-        Scanner testScanner = new Scanner(namesReadTest);
-        List<String> namesListTest = new ArrayList<>();
+        File file = new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_input.txt");
 
-        while(testScanner.hasNextLine()) {
-            namesListTest.add(testScanner.nextLine());
+        Scanner s = new Scanner(file);
+
+        List<String> list = new ArrayList<>();
+
+        while(s.hasNextLine()) {
+
+            list.add(s.nextLine());
         }
-        testScanner.close();
 
-        namesListTest.sort(String::compareToIgnoreCase);
+        s.close();
 
-        List<String> namesListActual = new ArrayList<>();
+        list.sort(String::compareToIgnoreCase);
 
-        namesListActual.add("Johnson, Jim");
-        namesListActual.add("Jones, Aaron");
-        namesListActual.add("Jones, Chris");
-        namesListActual.add("Ling, Mai");
-        namesListActual.add("Swift, Geoffrey");
-        namesListActual.add("Xiong, Fong");
-        namesListActual.add("Zarnecki, Sabrina");
+        List<String> listNew = new ArrayList<>();
 
-        assertEquals(namesListTest,namesListActual);
+        listNew.add("Johnson, Jim");
+
+        listNew.add("Jones, Aaron");
+
+        listNew.add("Jones, Chris");
+
+        listNew.add("Ling, Mai");
+
+        listNew.add("Swift, Geoffrey");
+
+        listNew.add("Xiong, Fong");
+
+        listNew.add("Zarnecki, Sabrina");
+
+        assertEquals(list,listNew);
     }
 }

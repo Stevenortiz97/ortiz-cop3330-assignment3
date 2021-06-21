@@ -36,6 +36,7 @@ public class ex42 {
         //Read the txt file called "exercise42_input.txt"
 
         Scanner s = new Scanner(new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise42_input.txt"));
+
         ArrayList<String> list = new ArrayList<String>();
 
         //Split the first name, last name,, and salary
