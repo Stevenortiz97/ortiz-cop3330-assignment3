@@ -12,19 +12,16 @@
 //Created ./website/awesomeco/js/
 //Created ./website/awesomeco/css/
 
-//pseudocode
-// ask for the website information
-// store user responses
-// generate index.html file
-
 package ex43;
 
 import java.io.*;
 import java.util.Scanner;
 public class ex43 {
 
-    public static void makeWebsite () {
+    private static void makeWebsite () {
 
+        // ask for the website information
+        // store user responses
 
         Scanner s = new Scanner(System.in);
 
@@ -49,6 +46,8 @@ public class ex43 {
         System.out.print("Do you want a folder for CSS? ");
 
         css = s.next().charAt(0);
+
+        // generate index.html file
 
         path = System.getProperty("user.dir");
 
@@ -78,7 +77,6 @@ public class ex43 {
                     if (javaScript1) {
                         System.out.println("Created " + javaScriptFile + "\\");
                     }
-
                 }
 
                 if (css == 'y') {
@@ -87,17 +85,13 @@ public class ex43 {
                     if (cssFile1) {
                         System.out.println("Created " + cssFile + "\\");
                     }
-
                 }
-            } catch (IOException e) {
-                System.out.println("index.html not created as required!!");
+            } catch (IOException ignored) {
             }
             break ;
         }
     }
-
     public static void main(String[] args) {
-
         makeWebsite();
     }
 

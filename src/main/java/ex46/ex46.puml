@@ -1,0 +1,17 @@
+@startuml
+
+class ex45 {
+
++ i1: int
++ i2: int
++ input: String
++ s: File
++ hashMap: Hashmap
+
+
++ main(): void
+- wordCounter(): void
+
+}
+
+@enduml

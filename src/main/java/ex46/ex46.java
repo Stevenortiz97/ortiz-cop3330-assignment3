@@ -23,37 +23,52 @@ import java.util.Scanner;
 
 public class ex46 {
 
-    public static void main(String[] args) throws IOException {
-        wordCounter();
-    }
-
     private static void wordCounter() throws IOException {
-        int count;
+
+        //Scan file exercise46_input.txt
+        //Use hash map
+
+        int i1;
+        int i2 = 0;
         String input;
 
         File file = new File("C:\\Users\\steven\\Desktop\\OOP\\Assignment 3\\exercise46_input.txt");
         Scanner s = new Scanner(file);
-        HashMap<String, Integer> map = new HashMap<>();
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        //Split words and count occurrences
 
         while (s.hasNextLine()){
+
             input = s.nextLine();
             String[] list = input.split("\s+");
 
             for (String word : list) {
-                if (map.containsKey(word)) {
-                    count = map.get(word);
-                    map.put(word, count + 1);
-                } else {
-                    map.put(word, 1);
+
+                if (hashMap.containsKey(word)) {
+                    i1 = hashMap.get(word);
+                    hashMap.put(word, i1 + 1); }
+
+                else {
+                    hashMap.put(word, 1);
                 }
             }
         }
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.print(entry.getKey() + " : ");
-            for(int i = 0; i < entry.getValue(); i++){
+
+        //Print occurrences of each word to user
+
+        for (Map.Entry<String, Integer> quantity : hashMap.entrySet()) {
+
+            System.out.print(quantity.getKey() + " : ");
+
+            for(i2 = 0; i2 < quantity.getValue(); i2++){
                 System.out.print("*");
             }
             System.out.print("\n");
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        wordCounter();
     }
 }

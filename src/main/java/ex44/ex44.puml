@@ -1,0 +1,20 @@
+@startuml
+
+class ex44 {
+
+
++ sJson: File
++ list: ArrayList
++ name: String
++ price: Double
++ quantity: int
+
++ main(): void
+- readFile(): ArrayList
+- storeInformation(): String
+- inventoryChecker(): String
+- output(): void
+
+}
+
+@enduml

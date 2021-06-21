@@ -12,11 +12,6 @@ UCF COP3330 Summer 2021 Assignment 3 Exercise 45
 //For example, "She uses an IDE to write her Java programs" instead of "She
 //uses an IDE to write her Java programs".
 
-//pseudocode
-//Scan text file
-//Prompt user for name of file output
-//change utilize to use
-//close new file
 
 package ex45;
 
@@ -35,15 +30,24 @@ public class ex45 {
 
     private static void makeFile() throws IOException {
 
+        //Scan exercise45_input.txt
+
         File file = new File("C:\\Users\\steven\\Desktop\\OOP\\Assignment 3\\exercise45_input.txt");
         Scanner s = new Scanner(file);
         Scanner s1 = new Scanner(System.in);
+
+        //Prompt user for name of output file
 
         System.out.print("Enter a name for the output file: ");
 
         String userFile = s1.next();
 
+        //Create custom named file
+
         FileWriter wordChange = new FileWriter("C:\\Users\\steven\\Desktop\\OOP\\Assignment 3\\"+userFile+".txt");
+
+        //Replace all cases of utilize with use
+
         try
         {
 

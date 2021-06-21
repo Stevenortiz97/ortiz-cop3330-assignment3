@@ -1,0 +1,16 @@
+@startuml
+
+class ex45 {
+
++ input: string
++ s: File
++ s1: String
++ list: ArrayList
++ wordChange: FileWriter
+
++ main(): void
+- makeFile(): ArrayList
+
+}
+
+@enduml

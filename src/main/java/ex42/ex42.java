@@ -12,10 +12,6 @@
 //Xiong     Fong      65000
 //Zarnecki  Sabrina   51500
 
-//pseudocode
-//Read the txt file called "exercise42_input.txt"
-//Split the first name, last name,, and salary
-// print
 
 package ex42;
 import java.io.File;
@@ -27,6 +23,8 @@ public class ex42 {
 
     public static void main(String[] args) throws FileNotFoundException {
 
+        //Create heading
+
         System.out.println("Last      First      Salary");
         System.out.println("---------------------------");
         readFile();
@@ -35,12 +33,19 @@ public class ex42 {
 
     private static void readFile() throws FileNotFoundException {
 
+        //Read the txt file called "exercise42_input.txt"
+
         Scanner s = new Scanner(new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise42_input.txt"));
         ArrayList<String> list = new ArrayList<String>();
+
+        //Split the first name, last name,, and salary
 
         while(s.hasNext()){
             String[] tokens = s.nextLine().split(",");
             //String last = tokens[tokens.length - 1];
+
+            // print
+
             System.out.println(list);
         }
 

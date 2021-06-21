@@ -1,12 +1,15 @@
 @startuml
 
-class ex41 {
+class ex42 {
 
+- s: file
 - list: ArrayList
- # i: int
+- sorted: ArrayList
+
 + main (): void
 - readFile(): ArrayList
-- createFile(): void
+- sorter(): void
+
 
 }
 

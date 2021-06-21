@@ -13,12 +13,6 @@
 //Xiong, Fong
 //Zarnecki, Sabrina
 
-//pseudocode
-//Read the txt file called "exercise41_input.txt"
-//Create a list of names from the file
-//Organize the names in order into a new list
-//print alphabetical list into "exercise41_output.txt"
-
 package ex41;
 import java.io.*;
 import java.util.ArrayList;
@@ -30,49 +24,50 @@ public class ex41 {
 
     private static int i = 0;
 
-
-    public static void main(String[] args) throws FileNotFoundException {
-
-
-        List sorted = readFile();
-
-        createFile(sorted);
-
-
-
-    }
-
     private static List readFile() throws FileNotFoundException {
 
+        //Read the txt file called "exercise41_input.txt"
 
         Scanner s = new Scanner(new File("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_input.txt"));
         ArrayList<String> list = new ArrayList<String>();
 
+        //Create a list of names from the file
 
         while (s.hasNextLine()) {
             list.add(s.nextLine());
             i ++;
-
         }
         s.close();
+
+        //Organize the names in order into a new list
 
         return Arrays.asList(
                 list.stream().sorted(String::compareToIgnoreCase).toArray(String[]::new)
         );
-
     }
 
     private static void createFile(List<String> list) throws FileNotFoundException {
 
         PrintWriter write = new PrintWriter("C:\\Users\\Steven\\Desktop\\OOP\\Assignment 3\\exercise41_output.txt");
 
+        //count the number of names
+
         write.println("Total of "+ i +" names");
         write.println("-----------------");
+
+        //print alphabetical list into "exercise41_output.txt"
 
         for(Object o : list)
             write.println(o);
 
         write.close();
+    }
+    public static void main(String[] args) throws FileNotFoundException {
+
+        List sorted = readFile();
+
+        createFile(sorted);
+
     }
 }
 
